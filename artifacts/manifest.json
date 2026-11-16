@@ -1,0 +1,278 @@
+{
+  "format": 1,
+  "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+  "created": "2026-11-16T13:56:15Z",
+  "harness": {
+    "name": "yg-pi-gemini-early",
+    "model_api": "google-cloud/gemini-3.8-flash",
+    "tree": null,
+    "commit": null,
+    "dirty": false
+  },
+  "tasks": {
+    "cooling-water-flush-plan": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-wd-1794787203",
+      "trial": "cooling-water-flush-plan__MjUzGDL",
+      "ended": "ok",
+      "reward": 0.0,
+      "tree": null,
+      "files": {},
+      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+      "deleted": [],
+      "skipped": []
+    },
+    "division-26-specifications": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-wd-1794787203",
+      "trial": "division-26-specifications__YrtuMDn",
+      "ended": "ok",
+      "reward": 0.0,
+      "tree": null,
+      "files": {},
+      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+      "deleted": [],
+      "skipped": []
+    },
+    "eor-review-corrections": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-wd-1794787203",
+      "trial": "eor-review-corrections__R8M8nAq",
+      "ended": "ok",
+      "reward": 0.0,
+      "tree": null,
+      "files": {},
+      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+      "deleted": [],
+      "skipped": []
+    },
+    "heat-rejection-life-cycle-cost": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-wd-1794787203",
+      "trial": "heat-rejection-life-cycle-cost__Noxpeav",
+      "ended": "ok",
+      "reward": 0.0,
+      "tree": null,
+      "files": {},
+      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+      "deleted": [],
+      "skipped": []
+    },
+    "roof-deck-design": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-wd-1794787203",
+      "trial": "roof-deck-design__6Dtu3L9",
+      "ended": "ok",
+      "reward": 0.0,
+      "tree": null,
+      "files": {},
+      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+      "deleted": [],
+      "skipped": []
+    },
+    "data-hall-device-takeoff": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-wd-1794775804",
+      "trial": "data-hall-device-takeoff__ocfcUEq",
+      "ended": "ok",
+      "reward": 0.104348,
+      "tree": null,
+      "files": {
+        "filesystem/final_batch4__electrical_task17_ec_0205_d100__blind/output/submission.zip": "48115cb20d4a4e5451c5be6feb69cbda710fee24"
+      },
+      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+      "deleted": [],
+      "skipped": []
+    },
+    "frame-extension-method": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-wd-1794775804",
+      "trial": "frame-extension-method__F9qCXEC",
+      "ended": "ok",
+      "reward": 0.0,
+      "tree": null,
+      "files": {},
+      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+      "deleted": [],
+      "skipped": []
+    },
+    "landscape-sheet-revision": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-wd-1794775804",
+      "trial": "landscape-sheet-revision__zGY4nkY",
+      "ended": "ok",
+      "reward": 0.493506,
+      "tree": null,
+      "files": {
+        "app/files/Correspondence/DSR_Ph3_Resubmittal_Tracker.xlsx": "9ffbc35904ca077fd9e5f050e2ca4d0b945e6262",
+        "app/files/output/DSR_Ph3_Memo_to_Callaway_20261031.docx": "5d9b7f743de90792ee52cdf8b3d478865fcc1d78",
+        "app/files/output/DSR_Ph3_Memo_to_Callaway_20261031.md": "564f47e95b89ae448f507904044f0cb725c92978",
+        "app/files/output/DSR_Ph3_Resubmittal_Tracker.xlsx": "9ffbc35904ca077fd9e5f050e2ca4d0b945e6262",
+        "app/files/output/memo_to_callaway.docx": "5d9b7f743de90792ee52cdf8b3d478865fcc1d78",
+        "app/files/output/memo_to_callaway.md": "564f47e95b89ae448f507904044f0cb725c92978"
+      },
+      "final_message": "2d2fa9e6fa51c4b234e841c0951c2f01bd549646",
+      "deleted": [],
+      "skipped": []
+    },
+    "seismic-diaphragm-shear": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-wd-1794775804",
+      "trial": "seismic-diaphragm-shear__xnSQLxL",
+      "ended": "ok",
+      "reward": 0.0,
+      "tree": null,
+      "files": {},
+      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+      "deleted": [],
+      "skipped": []
+    },
+    "fire-solve-convergence": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-wd-1794762002",
+      "trial": "fire-solve-convergence__6RbsvEg",
+      "ended": "ok; graded again from its deliverables",
+      "reward": 0.395349,
+      "tree": null,
+      "files": {
+        "filesystem/CFDME-2025-041_transient_solve_disposition_revA.docx": "4e2f3eb1b9da5aae5359fa74530897489f7cb787"
+      },
+      "final_message": "5c991728a2ed04ee6e697dff6900ab6e7394cbcc",
+      "deleted": [],
+      "skipped": []
+    },
+    "les-mesh-resolution": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-wd-1794762002",
+      "trial": "les-mesh-resolution__38UrMDN",
+      "ended": "ok",
+      "reward": 0.109756,
+      "tree": null,
+      "files": {
+        "filesystem/CFDME-2025-041_resolution_note_revA.docx": "f41c62b99404bafea939a428d834ffab97cb128f"
+      },
+      "final_message": "2902ee2fdd6179bde2746f287c54ed2ea4d90eb7",
+      "deleted": [],
+      "skipped": []
+    },
+    "fire-test-validation-memo": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-pass-0058",
+      "trial": "fire-test-validation-memo__kAY5eBZ",
+      "ended": "ok",
+      "reward": 0.586538,
+      "tree": null,
+      "files": {
+        "app/files/Projects/CFDME-2025-041_Ocotillo_WUI/Reports/CFDME-2025-041_validation_memo_20251010.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
+        "app/files/Projects/CFDME-2025-041_Ocotillo_WUI/Validation/CFDME-2025-041_validation_memo_20251010.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
+        "app/files/generate_memo.py": "4349634fe070aaffeb75354fa1aa84a52d510c82",
+        "app/files/output/CFDME-2025-041_E119_validation_memo.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
+        "app/files/output/CFDME-2025-041_E119_validation_memo.pdf": "1db1a6f92efff1b4d186967333896a759aa9d1b1",
+        "app/files/output/CFDME-2025-041_Phase1_report_revB_with_Section7.docx": "15a8f1ac6272246960633acdfb09052a75424283",
+        "app/files/output/CFDME-2025-041_validation_memo.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
+        "app/files/output/CFDME-2025-041_validation_memo.pdf": "1db1a6f92efff1b4d186967333896a759aa9d1b1",
+        "app/files/output/validation_memo.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
+        "app/files/output/validation_memo.pdf": "1db1a6f92efff1b4d186967333896a759aa9d1b1"
+      },
+      "final_message": "11840a04620b6ec963d4d38f3c9f576fc399f283",
+      "deleted": [],
+      "skipped": []
+    },
+    "lv-cable-sizing": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-pass-0058",
+      "trial": "lv-cable-sizing__TfiBi4X",
+      "ended": "ok",
+      "reward": 0.244675,
+      "tree": null,
+      "files": {
+        "filesystem/electrical__lv_cable_sizing__blind/output/submission.zip": "a026f9a901d94720fb8c380427662c9a26af2696"
+      },
+      "final_message": "6f444b1c25e78f4d6b31674131dde4dcc71bd33d",
+      "deleted": [],
+      "skipped": []
+    },
+    "mv-conveyance-study": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-pass-0058",
+      "trial": "mv-conveyance-study__ejAbDbn",
+      "ended": "ok",
+      "reward": 0.203623,
+      "tree": null,
+      "files": {
+        "filesystem/final_batch4__electrical_task12_conveyance_study__blind/output/submission.zip": "4de326b13845a330209597af76931ba01779d7aa"
+      },
+      "final_message": "37b4d22b7419d1f01aedd76b90b1995bffd30987",
+      "deleted": [],
+      "skipped": []
+    },
+    "wind-diaphragm-shear": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval-pass-0058",
+      "trial": "wind-diaphragm-shear__pzm82Mw",
+      "ended": "ok",
+      "reward": 0.119048,
+      "tree": null,
+      "files": {
+        "filesystem/final_batch4__structural_task5_wind_diaphragm_shear__blind/output/submission.zip": "d01ac45f042dd0aa154c77a299d76bc3d8a0300d"
+      },
+      "final_message": "fcec050bad595d270f43d012dc923e8dd646071a",
+      "deleted": [],
+      "skipped": []
+    },
+    "data-center-site-model": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval6",
+      "trial": "data-center-site-model__2nAYTBJ",
+      "ended": "ok",
+      "reward": 1.0,
+      "tree": null,
+      "files": {
+        "app/files/frontier__DCBim__p6_002/submission/model.ifc": "3e621a1cf899df133710d10662b6305944cc1578"
+      },
+      "final_message": "ae3db35481a8eb73393034b0062a75dfd5d7df3c",
+      "deleted": [],
+      "skipped": []
+    },
+    "data-hall-mep-routing": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval6",
+      "trial": "data-hall-mep-routing__q32fe7d",
+      "ended": "ok",
+      "reward": 0.591324,
+      "tree": null,
+      "files": {
+        "app/files/dc_model__hall_seed000_d000__mep_routing/output/solution.py": "7bd6421a4bb91d219608a6a6fcb04bddd343ba56"
+      },
+      "final_message": "c2c9bb3136a57ab2b57997ee5a65de1e27bd5494",
+      "deleted": [],
+      "skipped": []
+    },
+    "foundation-strategy": {
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "run": "eval6",
+      "trial": "foundation-strategy__FQhdypQ",
+      "ended": "ok",
+      "reward": 0.325,
+      "tree": null,
+      "files": {
+        "filesystem/dc_structural__foundation_strategy__blind/output/submission.zip": "dd09f512751ac1231811be2957f426895ce4c90c"
+      },
+      "final_message": "de05887d7ab103d7c2111fcf0eec742a8f1f1448",
+      "deleted": [],
+      "skipped": []
+    },
+    "data-hall-mep-routing-offset": {
+      "run": "eval",
+      "trial": "data-hall-mep-routing-offset__bxmgMYB",
+      "ended": "ok",
+      "reward": 0.0,
+      "tree": null,
+      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+      "files": {},
+      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+      "deleted": [],
+      "skipped": []
+    }
+  }
+}

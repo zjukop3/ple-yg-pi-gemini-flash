@@ -1,0 +1,227 @@
+// ==================================================================
+// CFDME-2025-033   Copperline Mechanical Contractors
+// Copperline Municipal HVAC -- interior building airflow case
+//
+// FLATTENED EXPORT from the OpenFOAM case directory
+//   src  : /Projects/CFDME-2025-033_Copperline_HVAC/Case/system/
+//          /Projects/CFDME-2025-033_Copperline_HVAC/Case/constant/
+//          /Projects/CFDME-2025-033_Copperline_HVAC/Case/0/
+//   by   : Nadia Okoro  <nokoro@thecfdme.com>
+//   task : TO-004 (run batch 4), executed 2025-08-14
+//   note : Text dump of the working dictionaries for archive/audit.
+//          Not a live case -- do not edit in place; open the case
+//          tree if you need to re-run.
+//
+// VALIDATED STATUS: 'Case validated for interior building airflow
+// per validation note CPL_case_validation_note.pdf; envelope:
+// steady, isothermal to within 6 degC, inlet velocities 0.2-0.8 m/s'
+// ==================================================================
+
+
+[1] SOLVER
+------------------------------------------------------------------
+system/controlDict (excerpt):
+
+    application     buoyantSimpleFoam;
+
+Formulation:
+  - buoyantSimpleFoam is a steady, incompressible-approx solver
+    that treats buoyancy via the Boussinesq approximation
+    (rho held at rho_0; density variation appears only in the
+    momentum body-force term as rho_0 * beta * (T - T_ref) * g).
+  - Single fluid region. Single-phase air. No species transport.
+  - Pressure-velocity coupling by SIMPLE with under-relaxation.
+
+Rationale (per CPL_case_validation_note.pdf):
+    Interior building airflow at design supply velocities is
+    weakly buoyant, essentially incompressible, and non-reacting.
+    Boussinesq is inside its envelope for the isothermal-to-within
+    6 degC condition documented in the validation note.
+
+
+[2] TURBULENCE
+------------------------------------------------------------------
+constant/turbulenceProperties:
+
+    simulationType  RAS;
+
+constant/RASProperties:
+
+    RASModel        kEpsilon;
+    turbulence      on;
+    printCoeffs     on;
+
+Wall treatment:
+    Standard wall functions on all no-slip walls:
+        k        -> kqRWallFunction
+        epsilon  -> epsilonWallFunction
+        nut      -> nutkWallFunction
+
+Note:
+    k-epsilon with standard wall functions is the firm default for
+    HVAC interior air. Validated for this project's geometry and
+    supply-air range per the case validation note.
+
+
+[3] INLET BOUNDARY CONDITION (supply diffuser face)
+------------------------------------------------------------------
+0/U (excerpt):
+
+    inlet
+    {
+        type            fixedValue;
+        value           uniform (0.4 0 0);   // 0.4 m/s along +x
+    }
+
+Nominal supply-air velocity: 0.4 m/s at the diffuser boundary.
+Inside the validated envelope of 0.2-0.8 m/s.
+
+0/T (excerpt):
+
+    inlet
+    {
+        type            fixedValue;
+        value           uniform 293.15;      // 20 degC supply
+    }
+
+
+[4] SOURCE TERMS (fvModels / fvOptions)
+------------------------------------------------------------------
+system/fvModels:
+
+    // (empty -- no active model entries)
+
+system/fvOptions:
+
+    // (empty -- no active source-term entries)
+
+No reacting-flow chemistry entries. No heat-release source terms.
+No species source terms. No mass sources. The momentum, energy
+and turbulence equations carry only their native buoyant / viscous
+/ turbulence-production contributions -- nothing else is added.
+
+No chemistryProperties dictionary is present in constant/.
+
+
+[5] OPTICAL / RADIATIVE TRANSPORT
+------------------------------------------------------------------
+constant/ contents (files present):
+
+    transportProperties
+    turbulenceProperties
+    RASProperties
+    g
+
+The optical transport dictionary is intentionally NOT present in
+this case. Interior building air at design conditions is optically
+thin over the room scale and the walls are treated as adiabatic
+(see [6]), so optical exchange is not modelled in this envelope.
+
+
+[6] EXTERNAL WALL BOUNDARY CONDITIONS
+------------------------------------------------------------------
+0/p_rgh (external walls):
+
+    externalWalls
+    {
+        type            fixedFluxPressure;
+        value           uniform 0;
+    }
+
+0/T (external walls):
+
+    externalWalls
+    {
+        type            zeroGradient;   // adiabatic
+    }
+
+0/U (external walls):
+
+    externalWalls
+    {
+        type            noSlip;
+    }
+
+External building envelope walls are adiabatic in this case:
+zero-gradient temperature (no through-wall heat flux modelled),
+paired with fixedFluxPressure so the momentum boundary sees a
+consistent hydrostatic pressure gradient under buoyancy. This
+matches the validation-note assumption that on the timescale of
+the steady interior-airflow solve, envelope conduction is small
+compared to interior mixing.
+
+
+[7] fvSchemes  (system/fvSchemes)
+------------------------------------------------------------------
+    ddtSchemes
+    {
+        default         steadyState;
+    }
+
+    gradSchemes
+    {
+        default         Gauss linear;
+        grad(U)         cellLimited Gauss linear 1;
+    }
+
+    divSchemes
+    {
+        default             none;
+        div(phi,U)          bounded Gauss upwind;
+        div(phi,T)          bounded Gauss upwind;
+        div(phi,k)          bounded Gauss upwind;
+        div(phi,epsilon)    bounded Gauss upwind;
+        div((nuEff*dev2(T(grad(U))))) Gauss linear;
+    }
+
+    laplacianSchemes
+    {
+        default         Gauss linear corrected;
+    }
+
+    interpolationSchemes
+    {
+        default         linear;
+    }
+
+    snGradSchemes
+    {
+        default         corrected;
+    }
+
+Steady-state ddt, first-order upwind on advected scalars and on
+the momentum equation. Consistent with the firm's steady-RANS
+practice for interior HVAC airflow.
+
+
+[8] controlDict  (system/controlDict, full body)
+------------------------------------------------------------------
+    application     buoyantSimpleFoam;
+
+    startFrom       startTime;
+    startTime       0;
+
+    stopAt          endTime;
+    endTime         2000;          // iterations, not seconds
+
+    deltaT          1;             // iteration counter
+
+    writeControl    timeStep;
+    writeInterval   200;
+
+    purgeWrite      2;
+
+    writeFormat     ascii;
+    writePrecision  8;
+    writeCompression off;
+
+    timeFormat      general;
+    timePrecision   6;
+
+    runTimeModifiable true;
+
+    // adjustTimeStep  no;   // steady solve -- not applicable
+
+Steady solve; endTime is a SIMPLE iteration count (2000), not a
+physical time. writeControl is timeStep. No adjustable time-step
+machinery is active because the solver is steady.

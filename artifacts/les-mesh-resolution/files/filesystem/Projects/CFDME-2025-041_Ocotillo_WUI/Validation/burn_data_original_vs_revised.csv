@@ -1,0 +1,7 @@
+# Ocotillo Additive Structures — Assembly burn data comparison
+# Prepared: 10/09/2025 by Bianca Rennert, VP Product Marketing
+# Source: Red Butte E119 report RBFMT-25-0918 (as_tested), with post-test thermocouple calibration correction applied to TC-6 (revised)
+metric,as_tested_min,revised_min,note
+single_point_endurance,118,129,Thermocouple calibration correction applied post-test per Ocotillo review
+average_rise_endurance,163,163,No change
+governing_criterion_note,118,129,Single-point governs per ASTM E119

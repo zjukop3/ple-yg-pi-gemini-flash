@@ -1,0 +1,174 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2312                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p_rgh;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+//
+// Project:  CFDME-2025-041  Ocotillo Additive Structures - WUI Phase 1
+// Case:     Case_windload  (SOW Sec 3.2 ASCE 7-22 structural wind-load extraction)
+// File:     0/p_rgh        (static gauge pressure minus rho*g*h, Pa)
+//
+// -----------------------------------------------------------------------------
+// SCOPE NOTE - READ BEFORE EDITING
+// -----------------------------------------------------------------------------
+// This is the STRUCTURAL WIND-LOAD case (SOW Sec 3.2), NOT the wildfire
+// Section 3.1 matrix.  Basic wind speed 96 mph per ASCE 7-22 for Tucson,
+// Exposure C, Risk Category II, mean roof height 6.4 m.  Peak windward wall
+// pressure 594 Pa (12.4 psf).  See CFDME-2025-041_windload_basis_memo.pdf
+// for the full ASCE 7-22 chain (K_z, K_zt, K_e, K_d, G, C_p tables).
+// Do not confuse this case with the wildfire cases under
+// Case/*, which run at 20-ft winds of 5, 8, 12 m/s and produce
+// wall pressures roughly two orders of magnitude smaller than the values
+// set below.
+// -----------------------------------------------------------------------------
+//
+// ASCE 7-22 chain (echoed here so the field file is self-documenting):
+//
+//   Velocity pressure at mean roof height z = 6.4 m:
+//       q_z = 0.00256 * K_z * K_zt * K_e * V^2
+//           = 0.00256 * 0.91 * 1.0 * 1.0 * 96^2
+//           = 21.5 psf
+//           = 1029 Pa
+//
+//   Windward wall design pressure (ASCE 7-22 rearrangement, K_d applied
+//   in the design pressure equation rather than in q_z):
+//       p_w = q_z * G * C_p * K_d
+//           = 21.5 * 0.85 * 0.8 * 0.85
+//           = 12.41 psf
+//           = 12.4 psf   =   594 Pa
+//   (see CFDME-2025-041_windload_basis_memo.pdf)
+//
+//   Wall-pressure coefficients used below (ASCE 7-22 Fig 27.3-1, enclosed
+//   low-rise, L/B approx 1):
+//       C_p_windward = +0.80
+//       C_p_leeward  = -0.50
+//       C_p_side     = -0.70
+//       C_p_roof     = -0.90 (most negative windward-slope value used
+//                              for envelope extraction)
+//
+//   Design pressures at other patches, same q_z * G * C_p * K_d chain:
+//       p_leeward = 1029 * 0.85 * (-0.50) * 0.85 = -372 Pa   (-7.8 psf)
+//       p_side    = 1029 * 0.85 * (-0.70) * 0.85 = -520 Pa   (-10.9 psf)
+//       p_roof    = 1029 * 0.85 * (-0.90) * 0.85 = -669 Pa   (-14.0 psf)
+//
+//   The inlet is driven by velocity only (atmBoundaryLayerInletVelocity on
+//   U, Exposure C log-law at the ASCE 7-22 basic wind speed); p_rgh at the
+//   inlet is zeroGradient so the flow is not doubly constrained. Wall
+//   patches use fixedFluxPressure (zero normal flux at a solid boundary,
+//   consistent with the "ground" patch below) rather than a prescribed
+//   surface pressure, so the reported wall pressures are an independent
+//   CFD prediction. This is a genuine cross-check: the reported surface
+//   loads are compared against, not prescribed to equal, the closed-form
+//   ASCE 7-22 wall pressures above.
+//
+// -----------------------------------------------------------------------------
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    inlet
+    {
+        // Velocity-driven inlet: atmBoundaryLayerInletVelocity on U sets
+        // the Exposure C log-law profile at the ASCE 7-22 basic wind
+        // speed. p_rgh is zeroGradient here so velocity and pressure are
+        // not both prescribed at the same boundary; the resulting
+        // pressure field, including the q_z = 1029 Pa (21.5 psf) velocity
+        // pressure at mean roof height, is recovered by the solve rather
+        // than imposed.
+        type            zeroGradient;
+    }
+
+    outlet
+    {
+        // Downwind boundary released to reference pressure.
+        type            fixedValue;
+        value           uniform 0;
+    }
+
+    windward_wall
+    {
+        // Solid wall: zero normal flux, pressure floats and is computed
+        // by the solve. ASCE 7-22 closed-form comparison target for this
+        // patch (not prescribed as a boundary value):
+        // p_w = q_z * G * C_p_w * K_d
+        //     = 1029 Pa * 0.85 * 0.80 * 0.85
+        //     = 594 Pa   (12.4 psf)
+        // K_d applied here per the ASCE 7-22 rearrangement in which
+        // the directionality factor multiplies the design pressure
+        // rather than the velocity pressure.  Cross-reference
+        // CFDME-2025-041_windload_basis_memo.pdf, Section 4.
+        type            fixedFluxPressure;
+        value           uniform 0;
+    }
+
+    leeward_wall
+    {
+        // Solid wall: zero normal flux, pressure floats and is computed
+        // by the solve. ASCE 7-22 closed-form comparison target for this
+        // patch (not prescribed as a boundary value):
+        // p_l = q_z * G * C_p_l * K_d
+        //     = 1029 * 0.85 * (-0.50) * 0.85
+        //     = -372 Pa   (-7.8 psf)
+        // Ratio to windward: p_l / p_w = C_p_l / C_p_w = -0.625.
+        type            fixedFluxPressure;
+        value           uniform 0;
+    }
+
+    side_walls
+    {
+        // Solid wall: zero normal flux, pressure floats and is computed
+        // by the solve. ASCE 7-22 closed-form comparison target for this
+        // patch (not prescribed as a boundary value):
+        // p_s = q_z * G * C_p_s * K_d
+        //     = 1029 * 0.85 * (-0.70) * 0.85
+        //     = -520 Pa   (-10.9 psf)
+        type            fixedFluxPressure;
+        value           uniform 0;
+    }
+
+    roof
+    {
+        // Solid wall: zero normal flux, pressure floats and is computed
+        // by the solve. ASCE 7-22 closed-form comparison target for this
+        // patch (windward-slope envelope value, not prescribed as a
+        // boundary value):
+        // p_r = q_z * G * C_p_r * K_d
+        //     = 1029 * 0.85 * (-0.90) * 0.85
+        //     = -669 Pa   (-14.0 psf)
+        type            fixedFluxPressure;
+        value           uniform 0;
+    }
+
+    ground
+    {
+        // No-flux wall at the desert soil surface; hydrostatic pressure
+        // recovered by the p_rgh formulation.
+        type            fixedFluxPressure;
+        value           uniform 0;
+    }
+
+    "(front|back)"
+    {
+        // Lateral domain faces normal to the mean flow are treated as
+        // symmetry planes; the wind-load case is aligned to the 96 mph
+        // ASCE 7-22 basic wind speed and does not need to resolve
+        // cross-wind angles here.
+        type            symmetry;
+    }
+}
+
+
+// ************************************************************************* //

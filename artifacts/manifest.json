@@ -1,278 +1,383 @@
 {
-  "format": 1,
-  "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-  "created": "2026-11-16T13:56:15Z",
-  "harness": {
-    "name": "yg-pi-gemini-early",
-    "model_api": "google-cloud/gemini-3.8-flash",
-    "tree": null,
-    "commit": null,
-    "dirty": false
+ "format": 1,
+ "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+ "created": "2026-11-16T13:56:15Z",
+ "harness": {
+  "name": "yg-pi-gemini-early",
+  "model_api": "google-cloud/gemini-3.8-flash",
+  "tree": null,
+  "commit": null,
+  "dirty": false
+ },
+ "tasks": {
+  "cooling-water-flush-plan": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval-wd-1794787203",
+   "trial": "cooling-water-flush-plan__MjUzGDL",
+   "ended": "ok",
+   "reward": 0.0,
+   "tree": null,
+   "files": {},
+   "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+   "deleted": [],
+   "skipped": []
   },
-  "tasks": {
-    "cooling-water-flush-plan": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-wd-1794787203",
-      "trial": "cooling-water-flush-plan__MjUzGDL",
-      "ended": "ok",
-      "reward": 0.0,
-      "tree": null,
-      "files": {},
-      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
-      "deleted": [],
-      "skipped": []
-    },
-    "division-26-specifications": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-wd-1794787203",
-      "trial": "division-26-specifications__YrtuMDn",
-      "ended": "ok",
-      "reward": 0.0,
-      "tree": null,
-      "files": {},
-      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
-      "deleted": [],
-      "skipped": []
-    },
-    "eor-review-corrections": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-wd-1794787203",
-      "trial": "eor-review-corrections__R8M8nAq",
-      "ended": "ok",
-      "reward": 0.0,
-      "tree": null,
-      "files": {},
-      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
-      "deleted": [],
-      "skipped": []
-    },
-    "heat-rejection-life-cycle-cost": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-wd-1794787203",
-      "trial": "heat-rejection-life-cycle-cost__Noxpeav",
-      "ended": "ok",
-      "reward": 0.0,
-      "tree": null,
-      "files": {},
-      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
-      "deleted": [],
-      "skipped": []
-    },
-    "roof-deck-design": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-wd-1794787203",
-      "trial": "roof-deck-design__6Dtu3L9",
-      "ended": "ok",
-      "reward": 0.0,
-      "tree": null,
-      "files": {},
-      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
-      "deleted": [],
-      "skipped": []
-    },
-    "data-hall-device-takeoff": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-wd-1794775804",
-      "trial": "data-hall-device-takeoff__ocfcUEq",
-      "ended": "ok",
-      "reward": 0.104348,
-      "tree": null,
-      "files": {
-        "filesystem/final_batch4__electrical_task17_ec_0205_d100__blind/output/submission.zip": "48115cb20d4a4e5451c5be6feb69cbda710fee24"
-      },
-      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
-      "deleted": [],
-      "skipped": []
-    },
-    "frame-extension-method": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-wd-1794775804",
-      "trial": "frame-extension-method__F9qCXEC",
-      "ended": "ok",
-      "reward": 0.0,
-      "tree": null,
-      "files": {},
-      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
-      "deleted": [],
-      "skipped": []
-    },
-    "landscape-sheet-revision": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-wd-1794775804",
-      "trial": "landscape-sheet-revision__zGY4nkY",
-      "ended": "ok",
-      "reward": 0.493506,
-      "tree": null,
-      "files": {
-        "app/files/Correspondence/DSR_Ph3_Resubmittal_Tracker.xlsx": "9ffbc35904ca077fd9e5f050e2ca4d0b945e6262",
-        "app/files/output/DSR_Ph3_Memo_to_Callaway_20261031.docx": "5d9b7f743de90792ee52cdf8b3d478865fcc1d78",
-        "app/files/output/DSR_Ph3_Memo_to_Callaway_20261031.md": "564f47e95b89ae448f507904044f0cb725c92978",
-        "app/files/output/DSR_Ph3_Resubmittal_Tracker.xlsx": "9ffbc35904ca077fd9e5f050e2ca4d0b945e6262",
-        "app/files/output/memo_to_callaway.docx": "5d9b7f743de90792ee52cdf8b3d478865fcc1d78",
-        "app/files/output/memo_to_callaway.md": "564f47e95b89ae448f507904044f0cb725c92978"
-      },
-      "final_message": "2d2fa9e6fa51c4b234e841c0951c2f01bd549646",
-      "deleted": [],
-      "skipped": []
-    },
-    "seismic-diaphragm-shear": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-wd-1794775804",
-      "trial": "seismic-diaphragm-shear__xnSQLxL",
-      "ended": "ok",
-      "reward": 0.0,
-      "tree": null,
-      "files": {},
-      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
-      "deleted": [],
-      "skipped": []
-    },
-    "fire-solve-convergence": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-wd-1794762002",
-      "trial": "fire-solve-convergence__6RbsvEg",
-      "ended": "ok; graded again from its deliverables",
-      "reward": 0.395349,
-      "tree": null,
-      "files": {
-        "filesystem/CFDME-2025-041_transient_solve_disposition_revA.docx": "4e2f3eb1b9da5aae5359fa74530897489f7cb787"
-      },
-      "final_message": "5c991728a2ed04ee6e697dff6900ab6e7394cbcc",
-      "deleted": [],
-      "skipped": []
-    },
-    "les-mesh-resolution": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-wd-1794762002",
-      "trial": "les-mesh-resolution__38UrMDN",
-      "ended": "ok",
-      "reward": 0.109756,
-      "tree": null,
-      "files": {
-        "filesystem/CFDME-2025-041_resolution_note_revA.docx": "f41c62b99404bafea939a428d834ffab97cb128f"
-      },
-      "final_message": "2902ee2fdd6179bde2746f287c54ed2ea4d90eb7",
-      "deleted": [],
-      "skipped": []
-    },
-    "fire-test-validation-memo": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-pass-0058",
-      "trial": "fire-test-validation-memo__kAY5eBZ",
-      "ended": "ok",
-      "reward": 0.586538,
-      "tree": null,
-      "files": {
-        "app/files/Projects/CFDME-2025-041_Ocotillo_WUI/Reports/CFDME-2025-041_validation_memo_20251010.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
-        "app/files/Projects/CFDME-2025-041_Ocotillo_WUI/Validation/CFDME-2025-041_validation_memo_20251010.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
-        "app/files/generate_memo.py": "4349634fe070aaffeb75354fa1aa84a52d510c82",
-        "app/files/output/CFDME-2025-041_E119_validation_memo.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
-        "app/files/output/CFDME-2025-041_E119_validation_memo.pdf": "1db1a6f92efff1b4d186967333896a759aa9d1b1",
-        "app/files/output/CFDME-2025-041_Phase1_report_revB_with_Section7.docx": "15a8f1ac6272246960633acdfb09052a75424283",
-        "app/files/output/CFDME-2025-041_validation_memo.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
-        "app/files/output/CFDME-2025-041_validation_memo.pdf": "1db1a6f92efff1b4d186967333896a759aa9d1b1",
-        "app/files/output/validation_memo.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
-        "app/files/output/validation_memo.pdf": "1db1a6f92efff1b4d186967333896a759aa9d1b1"
-      },
-      "final_message": "11840a04620b6ec963d4d38f3c9f576fc399f283",
-      "deleted": [],
-      "skipped": []
-    },
-    "lv-cable-sizing": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-pass-0058",
-      "trial": "lv-cable-sizing__TfiBi4X",
-      "ended": "ok",
-      "reward": 0.244675,
-      "tree": null,
-      "files": {
-        "filesystem/electrical__lv_cable_sizing__blind/output/submission.zip": "a026f9a901d94720fb8c380427662c9a26af2696"
-      },
-      "final_message": "6f444b1c25e78f4d6b31674131dde4dcc71bd33d",
-      "deleted": [],
-      "skipped": []
-    },
-    "mv-conveyance-study": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-pass-0058",
-      "trial": "mv-conveyance-study__ejAbDbn",
-      "ended": "ok",
-      "reward": 0.203623,
-      "tree": null,
-      "files": {
-        "filesystem/final_batch4__electrical_task12_conveyance_study__blind/output/submission.zip": "4de326b13845a330209597af76931ba01779d7aa"
-      },
-      "final_message": "37b4d22b7419d1f01aedd76b90b1995bffd30987",
-      "deleted": [],
-      "skipped": []
-    },
-    "wind-diaphragm-shear": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval-pass-0058",
-      "trial": "wind-diaphragm-shear__pzm82Mw",
-      "ended": "ok",
-      "reward": 0.119048,
-      "tree": null,
-      "files": {
-        "filesystem/final_batch4__structural_task5_wind_diaphragm_shear__blind/output/submission.zip": "d01ac45f042dd0aa154c77a299d76bc3d8a0300d"
-      },
-      "final_message": "fcec050bad595d270f43d012dc923e8dd646071a",
-      "deleted": [],
-      "skipped": []
-    },
-    "data-center-site-model": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval6",
-      "trial": "data-center-site-model__2nAYTBJ",
-      "ended": "ok",
-      "reward": 1.0,
-      "tree": null,
-      "files": {
-        "app/files/frontier__DCBim__p6_002/submission/model.ifc": "3e621a1cf899df133710d10662b6305944cc1578"
-      },
-      "final_message": "ae3db35481a8eb73393034b0062a75dfd5d7df3c",
-      "deleted": [],
-      "skipped": []
-    },
-    "data-hall-mep-routing": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval6",
-      "trial": "data-hall-mep-routing__q32fe7d",
-      "ended": "ok",
-      "reward": 0.591324,
-      "tree": null,
-      "files": {
-        "app/files/dc_model__hall_seed000_d000__mep_routing/output/solution.py": "7bd6421a4bb91d219608a6a6fcb04bddd343ba56"
-      },
-      "final_message": "c2c9bb3136a57ab2b57997ee5a65de1e27bd5494",
-      "deleted": [],
-      "skipped": []
-    },
-    "foundation-strategy": {
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "run": "eval6",
-      "trial": "foundation-strategy__FQhdypQ",
-      "ended": "ok",
-      "reward": 0.325,
-      "tree": null,
-      "files": {
-        "filesystem/dc_structural__foundation_strategy__blind/output/submission.zip": "dd09f512751ac1231811be2957f426895ce4c90c"
-      },
-      "final_message": "de05887d7ab103d7c2111fcf0eec742a8f1f1448",
-      "deleted": [],
-      "skipped": []
-    },
-    "data-hall-mep-routing-offset": {
-      "run": "eval",
-      "trial": "data-hall-mep-routing-offset__bxmgMYB",
-      "ended": "ok",
-      "reward": 0.0,
-      "tree": null,
-      "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
-      "files": {},
-      "final_message": "0caf518a848a254482f166a082fd5066143c1718",
-      "deleted": [],
-      "skipped": []
-    }
+  "division-26-specifications": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval-wd-1794787203",
+   "trial": "division-26-specifications__YrtuMDn",
+   "ended": "ok",
+   "reward": 0.0,
+   "tree": null,
+   "files": {},
+   "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+   "deleted": [],
+   "skipped": []
+  },
+  "eor-review-corrections": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval-wd-1794787203",
+   "trial": "eor-review-corrections__R8M8nAq",
+   "ended": "ok",
+   "reward": 0.0,
+   "tree": null,
+   "files": {},
+   "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+   "deleted": [],
+   "skipped": []
+  },
+  "heat-rejection-life-cycle-cost": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval-wd-1794787203",
+   "trial": "heat-rejection-life-cycle-cost__Noxpeav",
+   "ended": "ok",
+   "reward": 0.0,
+   "tree": null,
+   "files": {},
+   "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+   "deleted": [],
+   "skipped": []
+  },
+  "roof-deck-design": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval-wd-1794787203",
+   "trial": "roof-deck-design__6Dtu3L9",
+   "ended": "ok",
+   "reward": 0.0,
+   "tree": null,
+   "files": {},
+   "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+   "deleted": [],
+   "skipped": []
+  },
+  "data-hall-device-takeoff": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval-wd-1794775804",
+   "trial": "data-hall-device-takeoff__ocfcUEq",
+   "ended": "ok",
+   "reward": 0.104348,
+   "tree": null,
+   "files": {
+    "filesystem/final_batch4__electrical_task17_ec_0205_d100__blind/output/submission.zip": "48115cb20d4a4e5451c5be6feb69cbda710fee24"
+   },
+   "final_message": "82cf3880580313c785c3a5e6d8b1333a9ea6b166",
+   "deleted": [],
+   "skipped": []
+  },
+  "frame-extension-method": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval-wd-1794907206",
+   "trial": "frame-extension-method__Mfj2oSM",
+   "ended": "ok",
+   "reward": 0.3449,
+   "tree": null,
+   "files": {
+    "filesystem/field_eng__constructability_4d__blind/output/submission.zip": "93f05b103d74d2bb1293649b28705277d70f688c"
+   },
+   "final_message": "d56526aa62a16715dc9a79f4a93a2ac35f5637aa",
+   "deleted": [],
+   "skipped": []
+  },
+  "landscape-sheet-revision": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval-wd-1794775804",
+   "trial": "landscape-sheet-revision__zGY4nkY",
+   "ended": "ok",
+   "reward": 0.493506,
+   "tree": null,
+   "files": {
+    "app/files/Correspondence/DSR_Ph3_Resubmittal_Tracker.xlsx": "9ffbc35904ca077fd9e5f050e2ca4d0b945e6262",
+    "app/files/output/DSR_Ph3_Memo_to_Callaway_20261031.docx": "5d9b7f743de90792ee52cdf8b3d478865fcc1d78",
+    "app/files/output/DSR_Ph3_Memo_to_Callaway_20261031.md": "564f47e95b89ae448f507904044f0cb725c92978",
+    "app/files/output/DSR_Ph3_Resubmittal_Tracker.xlsx": "9ffbc35904ca077fd9e5f050e2ca4d0b945e6262",
+    "app/files/output/memo_to_callaway.docx": "5d9b7f743de90792ee52cdf8b3d478865fcc1d78",
+    "app/files/output/memo_to_callaway.md": "564f47e95b89ae448f507904044f0cb725c92978"
+   },
+   "final_message": "2d2fa9e6fa51c4b234e841c0951c2f01bd549646",
+   "deleted": [],
+   "skipped": []
+  },
+  "seismic-diaphragm-shear": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval-wd-1794907206",
+   "trial": "seismic-diaphragm-shear__sNbKY6v",
+   "ended": "ok",
+   "reward": 0.297479,
+   "tree": null,
+   "files": {
+    "filesystem/final_batch4__structural_task6_seismic_diaphragm_shear__blind/output/submission.zip": "554b1aee4f8744d398715137ea5961a18fca370f"
+   },
+   "final_message": "d91443581610931b1919e4ea4c58849be24e7e3b",
+   "deleted": [],
+   "skipped": []
+  },
+  "fire-solve-convergence": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "1794991505",
+   "trial": "fire-solve-convergence__aStiUjp",
+   "ended": "ok",
+   "reward": 0.449612,
+   "tree": null,
+   "files": {
+    "filesystem/20251009_Falk_runtime_projection_basis.eml": "4941845be371059be61c2c51410de88fd97f2370",
+    "filesystem/CFDME-2025-041_transient_solve_disposition_revA.docx": "1e06e831e2a6510cd26532df903e830fa084588a",
+    "filesystem/Firm/HR/Billing/billing_by_engineer_2025.xlsx": "c76ad3f8e8743f914cae17821255eb8e7558955b",
+    "filesystem/Firm/HR/CFDME_Compensation_Quota_Policy_rev3.pdf": "af0919b3d3571e8243c58f3523200a6309b1d0d2",
+    "filesystem/Firm/HR/CFDME_Remediation_Procedure_rev2.pdf": "071488349d7a1a41c0e798119d6b654ad82ff7c4",
+    "filesystem/Firm/Ops/CFDME_staffing_assignments.xlsx": "29b5e0bb28584d1f86df47f499359bad50c181d9",
+    "filesystem/Firm/Ops/HPC/cluster_job_accounting_2025Q3.csv": "cd3052cae6b816e565d3c7692a3bcd40a8b14298",
+    "filesystem/Firm/Ops/Mulshi/WO_draft_CPL_batch4.docx": "24d20c365f7a2a68f234294bfefca5a555527188",
+    "filesystem/Firm/QA/CFDME_QA_Verification_Standard_rev3.pdf": "99f2943c5031b998df3c9dff3db5926bea8e85ce",
+    "filesystem/Firm/QA/CFDME_Validation_Procedure_rev2.pdf": "936cfd738a63ae5a884c67a93891766c1dd29e6a",
+    "filesystem/Firm/QA/Reviews/CFDME-2025-041_peer_review_checklist.docx": "9fe96929cd8cadca9d8ae02557523de3732a6555",
+    "filesystem/Firm/Standards/CFDME_Modeling_Standards_Fire_rev4.pdf": "74eceda8f1e8185799cd3d1568c3ae1fae1e5ab9",
+    "filesystem/Firm/Standards/CFDME_Standards_Digest_rev1.pdf": "22afd553ac86755597f49bc5e43fd8bf20e21913",
+    "filesystem/Firm/Standards/CFDME_Units_SOP_rev2.pdf": "c0dd11b844356a1213b21de54a971183b0e4a2c1",
+    "filesystem/Firm/Standards/Reference_Cases/fireFoam_transient_controlDict.txt": "777219931fc71508bf855add81f9d9cc89d58df5",
+    "filesystem/Projects/CFDME-2024-018_DryWash_Aero/Case/DWA_highaltitude_case_setup.txt": "6ef7ff4bb9c739b1f6c0ff5efa10638bdeb69f82",
+    "filesystem/Projects/CFDME-2024-018_DryWash_Aero/Contracts/DWA_SOW_signed.pdf": "dadac519930b4735757c50c9029eb75926666d3a",
+    "filesystem/Projects/CFDME-2024-018_DryWash_Aero/Validation/DWA_validation_memo.pdf": "dc7a47ca6ee4cf9deebe9dfff5199e03c57bb4c1",
+    "filesystem/Projects/CFDME-2024-018_DryWash_Aero/Validation/DWA_windtunnel_comparison.csv": "52afa9738be451a8a3e321e9be0581e34f35d1c4",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Case/system_archive/CPL_buoyant_case_setup.txt": "df8c35cf76a6385f9a820f16b989bd4108856794",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Contracts/Copperline_MSA_executed.pdf": "8837ff69881095ac76ab49931e013dae42d2cf8d",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Contracts/Copperline_TO-004_run_batch4.pdf": "70db2bf40bad67222914b15125a25070aafd1ce7",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Correspondence/20250812_Osei_engagement_confirmation.eml": "1e2726a012897712d416cdd8f69737f9a832e4d6",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Ops/CFDME-2025-033_schedule.xlsx": "57ec7d78d4dc08025b0744de6ed14c610799a973",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Validation/CPL_case_validation_note.pdf": "b3354d6423f72de789d2f9fd655dc479556e9911",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case/logs/log.snappyHexMesh_20251009.txt": "7271faae678a6a7314604c48c98956c1b8bba02e",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case/logs/log.solve_20251009_attempt3.txt": "5dc882885d745bcbbf18ef6318ad573fdd74845d",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case/system/controlDict": "aae214035615e305b194bcc7ad9fe3b63f6b0186",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case/system_archive/OAS_case_setup_from_DWA.txt": "3741e284e5c3c21f7e6b4b2e3a19847599670553",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case/verification/three_grid_study_outputs.txt": "67e205e750465a4ad26422e105f8892a4a1a5abf",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case_windload/0/p_rgh": "b83f6cbe6ba904fbb71de321e5878daa508e83d5",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case_windload/postProcessing/interim_wall_pressures.csv": "4e2aafa3d6f4839e5457645fbcbf50ba98ee3e48",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Contracts/CFDME-2025-041_SOW_signed_20251008.pdf": "faf108713d8921e1fd9123aaee783697c8565cc0",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Contracts/CFDME-2025-041_change_order_log.xlsx": "1fb3ae810e8fc53e2fe15019c6610b926d819242",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Correspondence/20251006_Buckhalter_proposal_request.eml": "c21a9508893ade9cb692f069e1e2c706c9922e70",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Correspondence/20251009_Buckhalter_geometry_revD.eml": "846abe04d13fec0e38d3e4c81c55bee666bb7e44",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Correspondence/20251009_Buckhalter_second_direction.eml": "d613e1b5d07cb650c68a2d91c368dc52b3f30a2b",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Correspondence/20251009_Rennert_revised_burn_data.eml": "199bc95cd86ea2e785ae912e41abca072521202e",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Data/site_met_avra_valley_2015-2024.csv": "4be4473e414d6570ab189884887db49b0b9f21d1",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Deliverables/CFDME-2025-041_deliverable_manifest.xlsx": "b3376f5315b5907b28132b2752ac92198a444b5f",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Geometry/OAS-WUI-01_revC.FCStd": "be423ef19b09a2ae70534afd66cbb159adc446c3",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Geometry/OAS-WUI-01_revD.FCStd": "9f8b2deb2168b2b26a342af115d5d29d40ee50e9",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Geometry/OAS_wall_assembly_section.png": "d481e330517e0dcd78b1e6e9cb2d1f348d79c3c9",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Ops/CFDME-2025-041_budget_tracker.xlsx": "a3653b09b26dc7dfccd81a9ffd6436549c5ea38d",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Reports/CFDME-2025-041_Phase1_report_revB.docx": "9cd0303b3eab159aa1ba34ecd03ad6c89ef8dc46",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Reports/CFDME-2025-041_interim_summary_draft.docx": "710bf74d097e16473a24eeb07a2fd22050eeb9ca",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Reports/CFDME-2025-041_scoping_memo_20251008.docx": "bb2daff75db2267fbcde6a838382a234b73bfb7a",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Reports/CFDME-2025-041_windload_basis_memo.pdf": "93503c8abd564b4a1a4b84f22fc30433f098e00d",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Validation/E119_companion_sim_results.csv": "fd737bf90886f4d245d8451cf0e9f9f32dbad721",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Validation/Ironwood_certification_memo_20250929.pdf": "c3751995576004ce5c1153e5ac4fac72041451d1",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Validation/RedButte_E119_test_report_20250924.pdf": "9e0daeced00830c80fe8ee045a8cca9448f3c22c",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Validation/burn_data_original_vs_revised.csv": "2822b4f4f8d0b5947f0ccc0f59163f29c08bc943"
+   },
+   "final_message": "59a5e226ed401f25d3fee47851b9d14921fddf33",
+   "deleted": [],
+   "skipped": []
+  },
+  "les-mesh-resolution": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "1794991505",
+   "trial": "les-mesh-resolution__bHZU3YZ",
+   "ended": "ok",
+   "reward": 0.121951,
+   "tree": null,
+   "files": {
+    "filesystem/CFDME-2025-041_resolution_note_revA.docx": "1e680929342723581a6a6860499d1671fd19cb84",
+    "filesystem/Firm/HR/Billing/billing_by_engineer_2025.xlsx": "c76ad3f8e8743f914cae17821255eb8e7558955b",
+    "filesystem/Firm/HR/CFDME_Compensation_Quota_Policy_rev3.pdf": "af0919b3d3571e8243c58f3523200a6309b1d0d2",
+    "filesystem/Firm/HR/CFDME_Remediation_Procedure_rev2.pdf": "071488349d7a1a41c0e798119d6b654ad82ff7c4",
+    "filesystem/Firm/Ops/CFDME_staffing_assignments.xlsx": "29b5e0bb28584d1f86df47f499359bad50c181d9",
+    "filesystem/Firm/Ops/HPC/cluster_job_accounting_2025Q3.csv": "cd3052cae6b816e565d3c7692a3bcd40a8b14298",
+    "filesystem/Firm/Ops/Mulshi/WO_draft_CPL_batch4.docx": "24d20c365f7a2a68f234294bfefca5a555527188",
+    "filesystem/Firm/QA/CFDME_QA_Verification_Standard_rev3.pdf": "99f2943c5031b998df3c9dff3db5926bea8e85ce",
+    "filesystem/Firm/QA/CFDME_Validation_Procedure_rev2.pdf": "936cfd738a63ae5a884c67a93891766c1dd29e6a",
+    "filesystem/Firm/QA/Reviews/CFDME-2025-041_peer_review_checklist.docx": "9fe96929cd8cadca9d8ae02557523de3732a6555",
+    "filesystem/Firm/Standards/CFDME_Modeling_Standards_Fire_rev4.pdf": "74eceda8f1e8185799cd3d1568c3ae1fae1e5ab9",
+    "filesystem/Firm/Standards/CFDME_Standards_Digest_rev1.pdf": "22afd553ac86755597f49bc5e43fd8bf20e21913",
+    "filesystem/Firm/Standards/CFDME_Units_SOP_rev2.pdf": "c0dd11b844356a1213b21de54a971183b0e4a2c1",
+    "filesystem/Firm/Standards/Reference_Cases/fireFoam_transient_controlDict.txt": "777219931fc71508bf855add81f9d9cc89d58df5",
+    "filesystem/Projects/CFDME-2024-018_DryWash_Aero/Case/DWA_highaltitude_case_setup.txt": "6ef7ff4bb9c739b1f6c0ff5efa10638bdeb69f82",
+    "filesystem/Projects/CFDME-2024-018_DryWash_Aero/Contracts/DWA_SOW_signed.pdf": "dadac519930b4735757c50c9029eb75926666d3a",
+    "filesystem/Projects/CFDME-2024-018_DryWash_Aero/Validation/DWA_validation_memo.pdf": "dc7a47ca6ee4cf9deebe9dfff5199e03c57bb4c1",
+    "filesystem/Projects/CFDME-2024-018_DryWash_Aero/Validation/DWA_windtunnel_comparison.csv": "52afa9738be451a8a3e321e9be0581e34f35d1c4",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Case/system_archive/CPL_buoyant_case_setup.txt": "df8c35cf76a6385f9a820f16b989bd4108856794",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Contracts/Copperline_MSA_executed.pdf": "8837ff69881095ac76ab49931e013dae42d2cf8d",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Contracts/Copperline_TO-004_run_batch4.pdf": "70db2bf40bad67222914b15125a25070aafd1ce7",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Correspondence/20250812_Osei_engagement_confirmation.eml": "1e2726a012897712d416cdd8f69737f9a832e4d6",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Ops/CFDME-2025-033_schedule.xlsx": "57ec7d78d4dc08025b0744de6ed14c610799a973",
+    "filesystem/Projects/CFDME-2025-033_Copperline_HVAC/Validation/CPL_case_validation_note.pdf": "b3354d6423f72de789d2f9fd655dc479556e9911",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case/logs/log.snappyHexMesh_20251009.txt": "7271faae678a6a7314604c48c98956c1b8bba02e",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case/logs/log.solve_20251009_attempt3.txt": "5dc882885d745bcbbf18ef6318ad573fdd74845d",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case/system/controlDict": "aae214035615e305b194bcc7ad9fe3b63f6b0186",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case/system_archive/OAS_case_setup_from_DWA.txt": "3741e284e5c3c21f7e6b4b2e3a19847599670553",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case/verification/three_grid_study_outputs.txt": "67e205e750465a4ad26422e105f8892a4a1a5abf",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case_windload/0/p_rgh": "b83f6cbe6ba904fbb71de321e5878daa508e83d5",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Case_windload/postProcessing/interim_wall_pressures.csv": "4e2aafa3d6f4839e5457645fbcbf50ba98ee3e48",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Contracts/CFDME-2025-041_SOW_signed_20251008.pdf": "faf108713d8921e1fd9123aaee783697c8565cc0",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Contracts/CFDME-2025-041_change_order_log.xlsx": "1fb3ae810e8fc53e2fe15019c6610b926d819242",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Correspondence/20251006_Buckhalter_proposal_request.eml": "c21a9508893ade9cb692f069e1e2c706c9922e70",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Correspondence/20251009_Buckhalter_geometry_revD.eml": "846abe04d13fec0e38d3e4c81c55bee666bb7e44",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Correspondence/20251009_Buckhalter_second_direction.eml": "d613e1b5d07cb650c68a2d91c368dc52b3f30a2b",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Correspondence/20251009_Rennert_revised_burn_data.eml": "199bc95cd86ea2e785ae912e41abca072521202e",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Data/site_met_avra_valley_2015-2024.csv": "4be4473e414d6570ab189884887db49b0b9f21d1",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Deliverables/CFDME-2025-041_deliverable_manifest.xlsx": "b3376f5315b5907b28132b2752ac92198a444b5f",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Geometry/OAS-WUI-01_revC.FCStd": "be423ef19b09a2ae70534afd66cbb159adc446c3",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Geometry/OAS-WUI-01_revD.FCStd": "9f8b2deb2168b2b26a342af115d5d29d40ee50e9",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Geometry/OAS_wall_assembly_section.png": "d481e330517e0dcd78b1e6e9cb2d1f348d79c3c9",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Ops/CFDME-2025-041_budget_tracker.xlsx": "a3653b09b26dc7dfccd81a9ffd6436549c5ea38d",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Reports/CFDME-2025-041_Phase1_report_revB.docx": "9cd0303b3eab159aa1ba34ecd03ad6c89ef8dc46",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Reports/CFDME-2025-041_interim_summary_draft.docx": "710bf74d097e16473a24eeb07a2fd22050eeb9ca",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Reports/CFDME-2025-041_scoping_memo_20251008.docx": "bb2daff75db2267fbcde6a838382a234b73bfb7a",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Reports/CFDME-2025-041_windload_basis_memo.pdf": "93503c8abd564b4a1a4b84f22fc30433f098e00d",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Validation/E119_companion_sim_results.csv": "fd737bf90886f4d245d8451cf0e9f9f32dbad721",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Validation/Ironwood_certification_memo_20250929.pdf": "c3751995576004ce5c1153e5ac4fac72041451d1",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Validation/RedButte_E119_test_report_20250924.pdf": "9e0daeced00830c80fe8ee045a8cca9448f3c22c",
+    "filesystem/Projects/CFDME-2025-041_Ocotillo_WUI/Validation/burn_data_original_vs_revised.csv": "2822b4f4f8d0b5947f0ccc0f59163f29c08bc943"
+   },
+   "final_message": "7d783c090dcea46b54df26cf5e78a67db20373cc",
+   "deleted": [],
+   "skipped": []
+  },
+  "fire-test-validation-memo": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval-pass-0058",
+   "trial": "fire-test-validation-memo__kAY5eBZ",
+   "ended": "ok",
+   "reward": 0.586538,
+   "tree": null,
+   "files": {
+    "app/files/Projects/CFDME-2025-041_Ocotillo_WUI/Reports/CFDME-2025-041_validation_memo_20251010.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
+    "app/files/Projects/CFDME-2025-041_Ocotillo_WUI/Validation/CFDME-2025-041_validation_memo_20251010.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
+    "app/files/generate_memo.py": "4349634fe070aaffeb75354fa1aa84a52d510c82",
+    "app/files/output/CFDME-2025-041_E119_validation_memo.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
+    "app/files/output/CFDME-2025-041_E119_validation_memo.pdf": "1db1a6f92efff1b4d186967333896a759aa9d1b1",
+    "app/files/output/CFDME-2025-041_Phase1_report_revB_with_Section7.docx": "15a8f1ac6272246960633acdfb09052a75424283",
+    "app/files/output/CFDME-2025-041_validation_memo.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
+    "app/files/output/CFDME-2025-041_validation_memo.pdf": "1db1a6f92efff1b4d186967333896a759aa9d1b1",
+    "app/files/output/validation_memo.docx": "62ac17e4f126e6397fa6e0c95a3f2a04676e257e",
+    "app/files/output/validation_memo.pdf": "1db1a6f92efff1b4d186967333896a759aa9d1b1"
+   },
+   "final_message": "11840a04620b6ec963d4d38f3c9f576fc399f283",
+   "deleted": [],
+   "skipped": []
+  },
+  "lv-cable-sizing": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval-pass-0058",
+   "trial": "lv-cable-sizing__TfiBi4X",
+   "ended": "ok",
+   "reward": 0.244675,
+   "tree": null,
+   "files": {
+    "filesystem/electrical__lv_cable_sizing__blind/output/submission.zip": "a026f9a901d94720fb8c380427662c9a26af2696"
+   },
+   "final_message": "57c483ecbd526554fb1104d7ae0e497bc64faf1a",
+   "deleted": [],
+   "skipped": []
+  },
+  "mv-conveyance-study": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "1795092906",
+   "trial": "mv-conveyance-study__7EfPhka",
+   "ended": "ok",
+   "reward": 0.255703,
+   "tree": null,
+   "files": {
+    "filesystem/final_batch4__electrical_task12_conveyance_study__blind/output/submission.zip": "29fad65fe8ebc1edbad7f7401a76921142796e68"
+   },
+   "final_message": "9541c95ae887120f8d645480a63580f37e7bf156",
+   "deleted": [],
+   "skipped": []
+  },
+  "wind-diaphragm-shear": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "1795092906",
+   "trial": "wind-diaphragm-shear__sigDFby",
+   "ended": "ok",
+   "reward": 0.147619,
+   "tree": null,
+   "files": {
+    "filesystem/final_batch4__structural_task5_wind_diaphragm_shear__blind/output/submission.zip": "f377913feb368efbd4c89c16afe91115b1c0874f"
+   },
+   "final_message": "c02b2144701c232475764c3a741b2c45750258c0",
+   "deleted": [],
+   "skipped": []
+  },
+  "data-center-site-model": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval6",
+   "trial": "data-center-site-model__2nAYTBJ",
+   "ended": "ok",
+   "reward": 1.0,
+   "tree": null,
+   "files": {
+    "app/files/frontier__DCBim__p6_002/submission/model.ifc": "3e621a1cf899df133710d10662b6305944cc1578"
+   },
+   "final_message": "ae3db35481a8eb73393034b0062a75dfd5d7df3c",
+   "deleted": [],
+   "skipped": []
+  },
+  "data-hall-mep-routing": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval6",
+   "trial": "data-hall-mep-routing__q32fe7d",
+   "ended": "ok",
+   "reward": 0.591324,
+   "tree": null,
+   "files": {
+    "app/files/dc_model__hall_seed000_d000__mep_routing/output/solution.py": "7bd6421a4bb91d219608a6a6fcb04bddd343ba56"
+   },
+   "final_message": "c2c9bb3136a57ab2b57997ee5a65de1e27bd5494",
+   "deleted": [],
+   "skipped": []
+  },
+  "foundation-strategy": {
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "run": "eval4",
+   "trial": "foundation-strategy__QygZFYc",
+   "ended": "ok",
+   "reward": 0.359375,
+   "tree": null,
+   "files": {
+    "filesystem/dc_structural__foundation_strategy__blind/output/submission.zip": "5c30f8090198235c8e595b372f9cc2cc6e662d2d"
+   },
+   "final_message": "de05887d7ab103d7c2111fcf0eec742a8f1f1448",
+   "deleted": [],
+   "skipped": []
+  },
+  "data-hall-mep-routing-offset": {
+   "run": "eval",
+   "trial": "data-hall-mep-routing-offset__bxmgMYB",
+   "ended": "ok",
+   "reward": 0.0,
+   "tree": null,
+   "dev_set": "85ad6d96fbf76ee64d9fb6339b3bf342b07128a2ebadc0a10f008c95dac01a48",
+   "files": {},
+   "final_message": "0caf518a848a254482f166a082fd5066143c1718",
+   "deleted": [],
+   "skipped": []
   }
+ }
 }

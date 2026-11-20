@@ -1,0 +1,249 @@
+/*--------------------------------------------------------------------------*\
+|  Project    : CFDME-2025-041  Ocotillo WUI Wildfire, Phase 1               |
+|  Case       : Ocotillo desert-fire case setup                              |
+|  Client     : Ocotillo Additive Structures                                 |
+|  Site       : Sonoran Desert buffelgrass WUI, Avra Valley (west of Tucson) |
+|  Geometry   : OAS-WUI-01_revC                                              |
+|  Export     : Flattened case dictionary bundle (plain ASCII)               |
+|                                                                            |
+|  Built from : CFDME-2024-018  Dry Wash Aerospace validated case            |
+|               (/Projects/CFDME-2024-018_DryWash_Aero/Case/                 |
+|                DWA_highaltitude_case_setup.txt)                            |
+|                                                                            |
+|  Prepared by: Ananya Deshmukh, Mulshi Simulation Labs                      |
+|  Date       : 10/09/2025                                                   |
+|                                                                            |
+|  Header note:                                                              |
+|    Based on a validated setup. The Dry Wash Aerospace high-altitude        |
+|    external-aerodynamics case (CFDME-2024-018) was validated against       |
+|    wind-tunnel data per DWA_validation_memo.pdf and is used here as        |
+|    the parent template. Solver, turbulence, freestream, combustion and    |
+|    radiation blocks are carried forward from the parent case. Geometry    |
+|    and boundary-patch naming have been swapped to the Ocotillo revC       |
+|    site model.                                                             |
+\*--------------------------------------------------------------------------*/
+
+
+================================================================================
+SECTION 1  --  SOLVER
+================================================================================
+
+  application            rhoSimpleFoam
+  formulation            steady-state, pressure-based, compressible
+  chemistry              none  (non-reacting)
+  energy                 sensibleInternalEnergy
+  compressible           yes
+  transient              no
+
+  Notes:
+    rhoSimpleFoam carried forward from the Dry Wash Aerospace validated
+    case. Steady, compressible, non-reacting formulation preserved.
+    No reactive scalar transport is compiled into the solve.
+
+
+================================================================================
+SECTION 2  --  TURBULENCE
+================================================================================
+
+  simulationType         RAS
+  RAS
+  {
+      RASModel                kOmegaSST
+      turbulence              on
+      printCoeffs             on
+  }
+
+  Wall treatment         standard wall functions on all no-slip surfaces
+                         (kqRWallFunction / omegaWallFunction /
+                          nutkWallFunction, per OpenFOAM defaults)
+
+  Freestream turbulence  I = 0.5 %, mu_t/mu = 5   (inherited from parent
+                         reference conditions of record)
+
+
+================================================================================
+SECTION 3  --  FREESTREAM CONDITIONS
+================================================================================
+
+  Reference pressure     p_inf   =  26,500 Pa
+  Reference temperature  T_inf   =  223 K
+  Reference density      rho_inf =  0.4 kg/m3
+  Mach number            M_inf   =  0.25
+  Reynolds regime        fully turbulent, wall-function resolved
+
+  Notes:
+    Freestream block inherited verbatim from the Dry Wash Aerospace
+    parent case. The 0.4 kg/m3 reference density is the anchor value
+    of the validated parent regime and has been retained here without
+    modification.
+
+
+================================================================================
+SECTION 4  --  COMBUSTION MODEL  (NONE)
+================================================================================
+
+  combustionModel        none      // no combustion carried forward from parent
+  chemistryModel         none
+  reactions              (none)
+  fvModels               (none active for chemistry or heat release)
+
+  Notes:
+    The parent Dry Wash case was non-reacting. No combustion model,
+    no fuel source, no oxidizer transport, and no heat-release term
+    are compiled into this case. The parent "no combustion" block is
+    carried forward verbatim.
+
+
+================================================================================
+SECTION 5  --  RADIATION MODEL  (NONE)
+================================================================================
+
+  radiation              off
+  radiationProperties    (dictionary intentionally omitted from constant/)
+
+  Notes:
+    The parent case carries no radiation participation. No
+    radiationProperties dictionary and no radiative source terms in
+    fvOptions are present. The parent "no radiation" block is carried
+    forward verbatim. Wall surfaces are treated as adiabatic no-slip
+    for the aerodynamics loads of interest.
+
+
+================================================================================
+SECTION 6  --  BOUNDARY CONDITIONS  (WALLS)
+================================================================================
+
+  Structure / ground / vegetation patch(es) [renamed to Ocotillo site model]:
+      type               wall
+      U                  fixedValue    (0 0 0)
+      p                  zeroGradient
+      T                  zeroGradient        // adiabatic
+      k                  kqRWallFunction
+      omega              omegaWallFunction
+      nut                nutkWallFunction
+
+  All wall surfaces use standard wall functions as declared in Section 2.
+  No conjugate heat transfer regions are defined; there are no cavity,
+  tie, or multi-region entries in constant/. (Wall-function block carried
+  forward from the parent case.)
+
+
+================================================================================
+SECTION 7  --  MESH AND GEOMETRY
+================================================================================
+
+  Geometry of record     OAS-WUI-01_revC
+  Geometry source        Ocotillo Additive Structures, transmitted with
+                         Phase 1 SOW package
+  Mesh generator         snappyHexMesh
+  Mesh build datetime    2025-10-09 morning
+  Background mesh        blockMesh, hex-aligned to site axes
+  Boundary patch naming  matched to OAS-WUI-01_revC site model
+                         (ground, structure, vegetation, inlet, outlet,
+                          lateral, top)
+
+  Notes:
+    Geometry and mesh are specific to the Ocotillo site. Site topography,
+    the printed-concrete structure envelope, and the buffelgrass fuel bed
+    footprint are represented from OAS-WUI-01_revC. Boundary-patch names
+    on the Ocotillo mesh replace the airframe/body patch names used in
+    the parent case. Mesh topology and refinement regions were rebuilt
+    against the revC geometry; they are not carried over from the parent.
+
+
+================================================================================
+SECTION 8  --  fvSchemes
+================================================================================
+
+  ddtSchemes
+  {
+      default            steadyState
+  }
+
+  gradSchemes
+  {
+      default            Gauss linear;
+      grad(U)            cellLimited Gauss linear 1;
+  }
+
+  divSchemes
+  {
+      default            none;
+      div(phi,U)         bounded Gauss upwind;
+      div(phi,e)         bounded Gauss upwind;
+      div(phi,k)         bounded Gauss upwind;
+      div(phi,omega)     bounded Gauss upwind;
+      div(((rho*nuEff)*dev2(T(grad(U)))))   Gauss linear;
+  }
+
+  laplacianSchemes
+  {
+      default            Gauss linear corrected;
+  }
+
+  interpolationSchemes
+  {
+      default            linear;
+  }
+
+  snGradSchemes
+  {
+      default            corrected;
+  }
+
+  wallDist
+  {
+      method             meshWave;
+  }
+
+  Note: fvSchemes block carried forward verbatim from the parent case;
+  first-order upwind advection is consistent with the steady-state
+  RANS discretisation on record.
+
+
+================================================================================
+SECTION 9  --  controlDict  (INHERITED)
+================================================================================
+
+  application            rhoSimpleFoam;
+  startFrom              latestTime;
+  startTime              0;
+  stopAt                 endTime;
+  endTime                3000;                 // iterations (steady)
+  deltaT                 1;                    // iteration counter
+  writeControl           timeStep;
+  writeInterval          500;
+  purgeWrite             3;
+  writeFormat            binary;
+  writePrecision         8;
+  writeCompression       off;
+  timeFormat             general;
+  timePrecision          6;
+  runTimeModifiable      true;
+  adjustTimeStep         no;
+
+  Function objects:
+      residuals          (U, p, e, k, omega)
+      wallShearStress    (structure patch)
+
+  Notes:
+    controlDict block inherited from the parent case. The application
+    field in the live case/system/controlDict has been edited downstream
+    to reflect a fire-oriented solver label; the remainder of the
+    controlDict entries (time-stepping mode, endTime in iterations,
+    writeControl timeStep, adjustTimeStep no) are those shown here as
+    inherited from the parent.
+
+
+================================================================================
+END OF EXPORT
+================================================================================
+
+  Prepared by:  Ananya Deshmukh, Mulshi Simulation Labs
+  Contact:      adeshmukh@mulshisim.in
+  Date:         10/09/2025
+
+  Parent case:  /Projects/CFDME-2024-018_DryWash_Aero/Case/
+                DWA_highaltitude_case_setup.txt
+  This export:  /Projects/CFDME-2025-041_Ocotillo_WUI/Case/system_archive/
+                OAS_case_setup_from_DWA.txt

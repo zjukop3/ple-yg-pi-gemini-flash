@@ -1,0 +1,209 @@
+/*--------------------------------------------------------------------------*\
+|  Project    : CFDME-2024-018  Dry Wash Aerospace                           |
+|  Case       : DWA high-altitude external aerodynamics                      |
+|  Client     : Dry Wash Aerospace Research                                  |
+|  Owner      : The CFD ME  |  4820 E River Rd, Suite 220, Tucson, AZ 85718  |
+|  Engineer   : Gordon Selby, PE  (AZ PE #48213)                             |
+|  Export     : Flattened case dictionary bundle (plain ASCII)               |
+|                                                                            |
+|  STATUS     : CLOSED  --  PROJECT ARCHIVE                                  |
+|                                                                            |
+|  VALIDATED STATUS:                                                         |
+|    Case validated against wind-tunnel data for the high-altitude           |
+|    non-reacting compressible aerodynamics regime per                       |
+|    DWA_validation_memo.pdf; envelope: high-altitude, low-density           |
+|    (0.4 kg/m3 freestream), non-reacting, no combustion model, no           |
+|    radiation model.                                                        |
+|                                                                            |
+|  VALIDATION ENVELOPE (from DWA_validation_memo.pdf Section 5):             |
+|    high-altitude, low-density (0.4 kg/m3), non-reacting compressible       |
+|    aerodynamics only.                                                      |
+|                                                                            |
+|  Retention  : Archived for reference on the Dry Wash flight envelope       |
+|               only.                                                        |
+\*--------------------------------------------------------------------------*/
+
+
+================================================================================
+SECTION 1  --  SOLVER
+================================================================================
+
+  application            rhoSimpleFoam
+  formulation            steady-state, pressure-based, compressible
+  chemistry              none  (non-reacting)
+  energy                 sensibleInternalEnergy
+  compressible           yes
+  transient              no
+
+  Notes:
+    rhoSimpleFoam is the validated solver for the Dry Wash high-altitude
+    external aerodynamics envelope: steady, compressible, non-reacting.
+    No reactive scalar transport is compiled into the solve.
+
+
+================================================================================
+SECTION 2  --  TURBULENCE
+================================================================================
+
+  simulationType         RAS
+  RAS
+  {
+      RASModel                kOmegaSST
+      turbulence              on
+      printCoeffs             on
+  }
+
+  Wall treatment         standard wall functions on all no-slip surfaces
+                         (kqRWallFunction / omegaWallFunction /
+                          nutkWallFunction, per OpenFOAM defaults)
+
+  Freestream turbulence  I = 0.5 %, mu_t/mu = 5   (matches wind-tunnel
+                         reference conditions of record)
+
+
+================================================================================
+SECTION 3  --  FREESTREAM CONDITIONS  (HIGH-ALTITUDE FLIGHT ENVELOPE)
+================================================================================
+
+  Envelope               high-altitude, low-density external aerodynamics
+  Reference pressure     p_inf   =  26,500 Pa
+  Reference temperature  T_inf   =  223 K
+  Reference density      rho_inf =  0.4 kg/m3
+  Mach number            M_inf   =  0.25
+  Reynolds regime        fully turbulent, wall-function resolved
+
+  These freestream values match the high-altitude flight envelope
+  documented in the Dry Wash SOW and reproduced in DWA_validation_memo.pdf.
+  The 0.4 kg/m3 freestream density is the anchor of the validated regime.
+
+
+================================================================================
+SECTION 4  --  COMBUSTION MODEL  (NONE)
+================================================================================
+
+  combustionModel        none      // no combustion in the validated regime
+  chemistryModel         none
+  reactions              (none)
+  fvModels               (none active for chemistry or heat release)
+
+  Rationale:
+    The Dry Wash envelope is non-reacting external aerodynamics. There is
+    no fuel source, no oxidizer transport, and no heat-release term. No
+    combustion model is compiled into the case.
+
+
+================================================================================
+SECTION 5  --  RADIATION MODEL  (NONE)
+================================================================================
+
+  radiation              off
+  radiationProperties    (dictionary intentionally omitted from constant/)
+
+  Rationale:
+    No radiation participation is modelled. The validated envelope carries
+    no radiationProperties dictionary and no radiative source terms in
+    fvOptions. Wall surfaces are treated as adiabatic no-slip for the
+    aerodynamics loads of interest.
+
+
+================================================================================
+SECTION 6  --  BOUNDARY CONDITIONS  (WALLS)
+================================================================================
+
+  Airframe / body patch:
+      type               wall
+      U                  fixedValue    (0 0 0)
+      p                  zeroGradient
+      T                  zeroGradient        // adiabatic
+      k                  kqRWallFunction
+      omega              omegaWallFunction
+      nut                nutkWallFunction
+
+  All wall surfaces use standard wall functions as declared in Section 2.
+  No conjugate heat transfer regions are defined; there are no cavity,
+  tie, or multi-region entries in constant/.
+
+
+================================================================================
+SECTION 7  --  fvSchemes
+================================================================================
+
+  ddtSchemes
+  {
+      default            steadyState
+  }
+
+  gradSchemes
+  {
+      default            Gauss linear;
+      grad(U)            cellLimited Gauss linear 1;
+  }
+
+  divSchemes
+  {
+      default            none;
+      div(phi,U)         bounded Gauss upwind;
+      div(phi,e)         bounded Gauss upwind;
+      div(phi,k)         bounded Gauss upwind;
+      div(phi,omega)     bounded Gauss upwind;
+      div(((rho*nuEff)*dev2(T(grad(U)))))   Gauss linear;
+  }
+
+  laplacianSchemes
+  {
+      default            Gauss linear corrected;
+  }
+
+  interpolationSchemes
+  {
+      default            linear;
+  }
+
+  snGradSchemes
+  {
+      default            corrected;
+  }
+
+  wallDist
+  {
+      method             meshWave;
+  }
+
+  Note: first-order upwind advection is consistent with the steady-state
+  RANS discretisation on record for this validated case.
+
+
+================================================================================
+SECTION 8  --  controlDict
+================================================================================
+
+  application            rhoSimpleFoam;
+  startFrom              latestTime;
+  startTime              0;
+  stopAt                 endTime;
+  endTime                3000;                 // iterations (steady)
+  deltaT                 1;                    // iteration counter
+  writeControl           timeStep;
+  writeInterval          500;
+  purgeWrite             3;
+  writeFormat            binary;
+  writePrecision         8;
+  writeCompression       off;
+  timeFormat             general;
+  timePrecision          6;
+  runTimeModifiable      true;
+  adjustTimeStep         no;
+
+  Function objects:
+      forceCoeffs         (lift, drag, moment on body patch)
+      residuals           (U, p, e, k, omega)
+      wallShearStress     (body patch)
+
+
+================================================================================
+END OF EXPORT
+================================================================================
+
+Cross-reference: DWA_validation_memo.pdf (Section 5, envelope statement);
+DWA_SOW_signed.pdf (Dry Wash Aerospace, closed 2024).
+Archive owner: Gordon Selby, PE  --  The CFD ME.
